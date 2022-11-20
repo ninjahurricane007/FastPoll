@@ -1,0 +1,28 @@
+{% extends "../base.html" %}
+{% load static %}
+{% block title %}
+{% endblock title %}
+{% block head %}
+<link rel="stylesheet" href="/static/login.css">
+{% endblock head %}
+{% block body %}
+<div class="contents">
+    <form class="login" method='POST'>
+        {% csrf_token %}
+        <img src="/static/images/face.png">
+        <input class="txt" type="text" placeholder="Username/Email" name="username" required=true>
+        <input class="txt" type="password" placeholder="Password" name="password" required=true>
+        <h3><a href="#"><u>forgot password?</u></a></h3>
+        <button>Login</button>
+        <h3 style="margin-top:10px">Don't have an account?&nbsp<a href="/signup"><u>Sign Up</u></a></h3><br>
+        <div class="form-group">
+            {% for message in messages %}
+            <div class="alert alert-danger" role="alert" style="margin-bottom: 0px;">
+                {{message}}
+            </div>
+            {% endfor %}
+        </div>
+    </form>
+</div>
+{% endblock body %}
+

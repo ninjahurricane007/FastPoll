@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card text-center">
+    <div class="card-body">
+        <h1>Welcome To Fast Poll</h1>
+        <p>Here you can vote for your favorite dish</p>
+        <a class="btn btn-dark" href="{% url 'polls:index' %}">
+            View Available Polls</a>
+    </div>
+</div>
+{% endblock %}
